@@ -16,31 +16,31 @@ class Books :
     def Book_id(self):
         
         self.book_id = random.randint(0,50)
-        return ("book id is : ",self.book_id)
+        return "book id is : ",self.book_id
 
 
     def Title(self):
         self.book_title = random.choice(book_title)
-        return("book title is : ",self.book_title)
+        return "book title is : ",self.book_title
         
 
     def Author(self):
         self.book_author = random.choice(author_name)
-        return("book author is : ",self.book_author)
+        return "book author is : ",self.book_author
 
 
     def Year(self):
         self.book_year = random.randint(2005,2020)
-        return("book publish year is :",self.book_year)
+        return "book publish year is :",self.book_year
 
     def Publisher(self):
         self.book_publisher = random.choice(publisher_name)
-        return("book publisher is :",self.book_publisher)
+        return "book publisher is :",self.book_publisher
 
 
     def Availaible_copies(self):
         self.book_availaible = random.randint(1,5)
-        return("availaible copies are : ",self.book_availaible)
+        return "availaible copies are : ",self.book_availaible
 
 
     def Publication_date(self):
@@ -57,6 +57,13 @@ class Books :
 
         return self.publication_date 
 
+
+
+        
+
+
+
+class BooksList() :
     def Combine(self):
         
           
@@ -85,13 +92,10 @@ class Books :
         
        
 
-        return ("book id is ",self.book_id,"book title is ",self.book_title,"book author is ",self.book_author,"availaible copies are ",self.book_availaible,"book publication date is ",self.publication_date,)
-        
+        return "Book id is ",self.book_id,"Book title is ",self.book_title,"Book author is ",self.book_author,"Availaible copies are ",self.book_availaible,"Book publication date is ",self.publication_date,"................."
 
 
-
-class BooksList(Books) :
-      pass
+      
 
 class User :
     pass
@@ -108,7 +112,7 @@ class Loans :
 
 
 
-book = Books("","","","","","","")
+book = BooksList()
 
 books_list = []  
 for x in range(5):
@@ -116,15 +120,19 @@ for x in range(5):
     
    
     books_list.append(book.Combine())
+
     
     
 
 
-# print(books_list)
+
+print(books_list)
+
+
 setss = set(books_list)
 print(setss)
 
-if "Steven" in setss:
+if 'Steven' in setss:
     print("yes ")
 else :
     print("no")
