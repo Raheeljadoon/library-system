@@ -52,8 +52,8 @@ class Books :
 
         for year, month, date in date_Time:
             # print("Date of publication is :", year ,"/", month ,"/", date)
-            a = year , month , date
-            self.publication_date = a
+            self.publication_date = year , month , date
+             
 
         return "publication date is ",self.publication_date 
 
@@ -65,7 +65,7 @@ class Books :
 
 class BooksList() :
     def Instances_information(self):
-        book = Books("","","","","","","")
+        
 
         books_list = []  
         for x in range(1):

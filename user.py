@@ -44,16 +44,15 @@ class User :
         return "user email address is ",self.email_address
 
     def Date_of_birth(self):
-        def gen_Publication_Date(number):
+        def gen_Date_of_birth(number):
             for item in range(number):
                 yield random.randrange(2000,2014), random.randrange(1, 12), random.randrange(1, 29)
 
-        date_Time = gen_Publication_Date(1)
+        date_Time = gen_Date_of_birth(1)
 
         for year, month, date in date_Time:
            
-            a = year , month , date
-            self.date_of_birth = a
+            self.date_of_birth = year , month , date
 
         return "date of birth is ",self.date_of_birth
 
@@ -123,8 +122,14 @@ class Userlist(User):
 
     def Remove_User(self):
         user_input = input("which user do you want to remove ")
-        first_names.remove(user_input)
-        print(user_input," have been removed")
+        if user_input in first_names:
+            first_names.remove(user_input)
+        
+
+            print(user_input," have been removed")
+
+        else :
+            print("user not found")
 
 
     def User_count(self):
@@ -139,10 +144,11 @@ class Userlist(User):
 
     def User_detail(self):
         self.user_name =  random.choice(user_name)
-        # self.search_user_ByUsername() in user_name
-        print("user found \n detail are {0}{1}{2}{3}{4}{5}".format(self.First_Name(),self.Sur_Name(),self.Street_Name(),self.Post_Code(),self.Email_Address(),self.Date_of_birth()))
+        if self.search_user_ByUsername() in user_name :
+            print("user found \n detail are {0}{1}{2}{3}{4}{5}".format(self.First_Name(),self.Sur_Name(),self.Street_Name(),self.Post_Code(),self.Email_Address(),self.Date_of_birth()))
 
-
+        else :
+            print("no such username found")
 
 
       
@@ -173,6 +179,6 @@ user = User("","","","","","","","")
 
 user1 = Userlist("","","","","","","","")
 user1.Instances_information()
-# user1.Remove_User()
+user1.Remove_User()
 user1.User_count()
 user1.User_detail()
