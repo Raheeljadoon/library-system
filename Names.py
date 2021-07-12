@@ -28,3 +28,27 @@ publisher_name = ["Rivercross Publishing Inc","Midnight Mail","Statesville Recor
     "Nickel Want Ads","Baltimore City Chamber Of Commerce","Windermere - Lakeview","Wooster Republican Printing","Carefree Press","Wyoming Park Pharmacy","Journal The",
     "Takeyuki Ueyama","Akron Life & Leisure Magazine","B.s. Associates","Instant Assistant Inc","Sampan","Boskage Commerce Publications","Robert Molyneux",
     "Birdwatcher's Digest","Grasslands Press","DUPAGE COUNTY PUBLIC WORKS","Appleby Arts Ltd","Zach Smith","Journal Of Business"]
+
+
+first_names = ["Snow","Dovid","Kristina","Glenn","Destinie","Kiko","Asiah","Khushi"
+,"Tafsir","Abdulsalam","Desiree","Thayne","Calyse","Marcelle","Ruwaida","Olimpia","Elanah","Kiante"
+,"Olivet","Jalen","Tenaya","Morgen","Merriam","Aditri","Ellenora","Elex","Lovella","Naava","Harshiv"
+"Lanee","Berk","Russ","Atif","Jamarie","Kalaiah","Lauryn","Dwight","Gila","Yoana","Avonni"
+,"Savannah","Addieson","Leala","Erika","Avyonna","Dalaysia","Sahory","Manhattan","Kymberlee","Keen"]
+
+
+sur_names = ["khan","malik","awan","afridi","shah"]
+
+
+street_name = ["Achorage Lane","Starfall Lane","Nova Avenue","Greenfield Row","Acorn Street",
+"Rose Avenue","Cedar Row","Sunny Lane","Grand Street",
+"Hope Row","Hill Street","Amber Boulevard","Coral Lane","Sunshine Lane","Rowan Boulevard","Vine Boulevard",
+"Union Lane","Wharf Boulevard",
+"Crown Lane","Beacon Street",]
+
+
+user_name = ["Snowshah2","Dovidmalik12","Kristinaafridi4","Glennawan14","Destiniekhan5","Kikokhan11","Asiahawan16","Khushimalik8"
+,"Tafsirshah13","Abdulsalamafridi15","Desireeshah1","Thaynemalik2","Calyseaawan14","Marcellekhan7","Ruwaidamalik9","Olimpiaafridi6","Elanahshah19","Kianteawan11"
+,"Olivetawan18","Jalenawan14","Tenayamalik14","Morgenshah14","Merriamkhan11","Aditrikhan4","Ellenora3","Elexmalik2","Lovellaafridi12","Naavaawan11","Harshivmalik19"
+"Laneeshah19","Berkafridi12","Russkhan15","Atifawan6","Jamarieawan12","Kalaiahkhan18","Laurynshah20","Dwightmalik11","Gilaawan8","Yoanakhan9","Avonniawan7"
+,"Savannahmalik17","Addiesonshah5","Lealamalik5","Erikashah9","Avyonnakhanmalik7","Dalaysiaawan6","Sahoryafridi4","Manhattankhan17","Kymberleeafridi13","Keenkhan9"]
