@@ -1,3 +1,5 @@
+
+import copy
 import random
 import string
 from Names import book_title , author_name , publisher_name
@@ -41,6 +43,17 @@ class Books :
     def Availaible_copies(self):
         self.book_availaible = random.randint(1,5)
         return "availaible copies are : ",self.book_availaible
+
+
+    def Copies_After_Buy(self):
+        
+        self.book_availaible1 = self.book_availaible - 1
+
+        return "remaining copies are ", self.book_availaible1
+
+
+    def Copies_After_Return(self):
+        return "remaining copies are " , self.book_availaible1 + 1
 
 
     def Publication_date(self):
@@ -193,40 +206,95 @@ class UserList :
 
 
 
-class Loans :
-    pass
+class Loans (Books):
+
+   
+        
+
+    
+  
+
+    
+    
+
+    def Borrow_book(self):
+        while True:
+            user_input = input("which book do you want to borrow  ")
+            if user_input in book_title :
+                print(self.Availaible_copies())
+                print("you borrowed the book")
+                print( self.Copies_After_Buy())
+
+            
+
+                user_input1 = input("do you want to buy another book ! y or n ")
+                if user_input1 == "y":
+                    continue
+                    
+
+
+                elif user_input1 == "n":
+                    break
 
 
 
-book = Books("","","","","","","")
+    def Return_book(self):
+        User_input = input("which book you wanted to return ")
+        print("book have returned ! Thanks")
+        print(self.Copies_After_Return())
 
-# books_list = []  
-# for x in range(1):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# book = Books("","","","","","","")
+
+# # books_list = []  
+# # for x in range(1):
     
     
    
-#     books_list.append(book)
+# #     books_list.append(book)
 
 
 
-# for each_book in books_list:
-#     print(each_book.Title(),"\n",each_
+# # for each_book in books_list:
+# #     print(each_book.Title(),"\n",each_
 
-# for x in range(5):
-#     book.Combine()
+# # for x in range(5):
+# #     book.Combine()
     
    
-#     books_list.append(book.Combine())
+# #     books_list.append(book.Combine())
 
-# print(books_list)
+# # print(books_list)
+("","","","","","","")
+
+# book1 = BooksList()
+# book1.Instances_information()
+
+# book1.Search_result()
+
+# book1.Book_Remove()
+
+# book1.Total_books()
+loan = Loans("","","","","","","")
+loan.Borrow_book()
+loan.Return_book()
 
 
-book1 = BooksList()
-book1.Instances_information()
-
-book1.Search_result()
-
-book1.Book_Remove()
-
-book1.Total_books()
-
+# print(book.Availaible_copies())
+# print(book.Copies_After_Buy())

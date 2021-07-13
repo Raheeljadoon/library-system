@@ -105,7 +105,7 @@ class Userlist(User):
 
     def Instances_information(self):
         user_list = []  
-        for x in range(1):
+        for instance in range(1):
     
     
    
