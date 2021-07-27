@@ -411,16 +411,47 @@ class Loans (User,Books):
                         
 
 
-                        self.user_input_foragain = input("do you want to buy another book ! y or n ")
+                        self.user_input_foragain = input("do you want to buy another book ! y or n  ")
                         if self.user_input_foragain == "y":
                             continue
                         
 
 
                         elif self.user_input_foragain  == "n":
+                            print("you borrowed",self.total_book, "books")
+
+                           
+                            
+                            enter_choice1 = input("do you want to return any book  ! y or n  ")
+
+                            if enter_choice1 == "y":
+
+
+                                self.User_input_forReturn = input("which book you wanted to return ")
+                                if self.User_input_forReturn in self.book_input_list :
+
+
+                                        print("book have returned ! Thanks")
+                                        self.book_input_list.remove(self.User_input_forReturn)
+                                        print(self.Copies_After_Return())
+
+                                else :
+                                        print("you enter wrong book name ")
+
+
+                            # elif enter_choice1 == "n":
+
+                            enter_choice = input("do you want to check your overdue books  ! y or n  ")
+                            if enter_choice == "y":
+                                print("your overdue books are ",self.book_input_list)
+                            
+
+
+                                break
+
                             break
 
-                        a = "total book you buy are ",self.total_book 
+                        
 
 
                     else :
@@ -445,7 +476,7 @@ class Loans (User,Books):
 
     def Return_book(self):
         self.User_input_forReturn = input("which book you wanted to return ")
-        if self.User_input_forReturn in book_title :
+        if self.User_input_forReturn in self.book_input_list :
 
 
             print("book have returned ! Thanks")
@@ -453,7 +484,7 @@ class Loans (User,Books):
             print(self.Copies_After_Return())
 
         else :
-            print("you enter wrong book name ")
+            print("you enter wrong book name or you haven't borrowed this book ")
 
 
 
@@ -464,114 +495,146 @@ class Loans (User,Books):
         
 
 
-        if self.User_input_forReturn   in  self.book_input_list  :
-            print("you dont have any overdue books")
+        # if self.User_input_forReturn   in  self.book_input_list  :
+        #     print("you dont have any overdue books")
 
-        else :
-            print("overdue books are ",self.user_input_forBorrow)
+        # else :
+        if len(self.book_input_list) == 0:
+            print("There are no overdue books")
+
+        else: 
+            print("overdue books are ",self.book_input_list ,"and user first name  is ",self.first_name,"sur name is ",self.sur_name)
 
         
     
 
 
         
-print("welcome to library managment system")
-user_choice = int(input("what you want to do \n 1 : Books Information \n 2 : User Information \n 3 : Borrow Books"))
+print(   "\nWelcome to library managment system \n ")
+book = Books("","","","","","","")
+book1 = BooksList("","","","","","","")
+while True :
+    user_choice = int(input("what you want to do \n 1 : Books Information \n 2 : User Information \n 3 : Borrow Books \n 4 : Exit  "))
 
-if user_choice == 1:
-    book = Books("","","","","","","")
-    book1 = BooksList("","","","","","","")
+    if user_choice == 1:
+        
 
-    user_choice1 = int(input("what you want to do \n 1: Show all books \n 2: Show one book complete information \n 3 : Search A book \n 4 : Remove A Book"))
+        while True:
 
-    if user_choice1 == 1:
+            user_choice1 = int(input("\nwhat you want to do \n 1: Show all books \n 2: Show one book complete information \n 3 : Search A book \n 4 : Remove A Book \n 5 : Back to main menu" ))
 
-        print("\n",book1.Total_books(),"\n")
-        print("books name are \n",book1.Total_booksName())
+            if user_choice1 == 1:
 
-    elif user_choice1 == 2:
+                print("\n",book1.Total_books(),"\n")
+                print("books name are \n",book1.Total_booksName())
 
-        book1.Instances_information()
+            elif user_choice1 == 2:
+
+                book1.Instances_information()
 
 
-    elif user_choice1 == 3 :
-        book1.Search_result()
+            elif user_choice1 == 3 :
+                book1.Search_result()
 
-    elif user_choice1 == 4:
-        book1.Book_Remove()
+            elif user_choice1 == 4:
+                book1.Book_Remove()
 
+            elif user_choice1 == 5 :
+                break
+
+            else :
+                print("\nwrong input try again")
+
+            
+            # print(book.Book_id())
+            # print(book.Publisher())
+            # print(book.Title())User_Name()
+
+
+
+
+
+    elif user_choice == 2:
+        user = User("","","","","","","","")
+        user1 = Userlist("","","","","","","","")
+        while True:
+
+
+            
+
+            user_choice2 = int(input("\nwhat you want to do \n 1 : Show All Users username \n 2 : One User complete information \n 3 : Change User Information \n 4 : Remove User \n 5 : Search User \n 6 : Back to main menu "))
+
+            if user_choice2 == 1 :
+                print(user1.User_count())
+                print(user.Total_Usernames())
+
+            if user_choice2 == 2 :
+                user1.Instances_information()
+
+            elif user_choice2 == 3 :    
+                user_choice2_1 = int(input("\nwhat you want to change \n 1 : Change user first name\n 2 : Change sur name \n 3 : Change email address \n 4 : Change date of birth  ! "))
+                if user_choice2_1 == 1 :
+
+                    print( user.Change_first_name())
+
+                elif user_choice2_1 == 2:
+                    print(user.Change_sur_name())
+
+                elif user_choice2_1 == 3:
+                    print(user.Change_email_address())
+
+                elif user_choice2_1 == 4:
+                    print(user.Change_date_of_birth())
+
+            if user_choice2 == 4 :
+                print(user1.Remove_User())
+
+
+            if user_choice2 == 5:
+                print(user1.search_user_ByUsername())
+
+            if user_choice2 == 6 :
+                break
+
+            else :
+                print("wrong Input try again")    
+
+        
+
+
+
+    elif user_choice == 3 :
+        
+        loan = Loans("","")
+        while True:
+            user_choice3 = int(input("\nwhat you want to do \n 1 : Borrowed a Book \n 2 : Return a book \n 3 : Total Borrow book \n 4 : Check Overdue books \n 5 : Back to main menu "))
+
+            if user_choice3 == 1 :
+                loan.Borrow_book()
+
+            elif user_choice3 == 2 :
+                loan.Return_book()
+
+            elif user_choice3 == 3 :
+                loan.Total_Borrow_book()
+
+            elif user_choice3 == 4 :
+                loan.Over_due_books()
+
+            elif user_choice3 == 5:
+                break
+
+            else :
+                print("you enter wrong input try again")
+
+    elif user_choice == 4 :
+        break
+
+
+    else :
+        print("you enter wrong input try again ! ")
     
-    # print(book.Book_id())
-    # print(book.Publisher())
-    # print(book.Title())User_Name()
-
-
-
-
-
-elif user_choice == 2:
-
-
-    user = User("","","","","","","","")
-    user1 = Userlist("","","","","","","","")
-
-    user_choice2 = int(input("what you want to do \n 1 : Show All Users username \n 2 : One User complete information \n 3 : Change User Information \n 4 : Remove User \n 5 : Search User "))
-
-    if user_choice2 == 1 :
-        print(user1.User_count())
-        print(user.Total_Usernames())
-
-    if user_choice2 == 2 :
-        user1.Instances_information()
-        user_choice2_1 = int(input("what you want to change \n 1 : Change user first name\n 2 : Change sur name \n 3 : Change email address \n 4 : Change date of birth"))
-        if user_choice2_1 == 1 :
-
-           print( user.Change_first_name())
-
-        elif user_choice2_1 == 2:
-            print(user.Change_sur_name())
-
-        elif user_choice2_1 == 3:
-            print(user.Change_email_address())
-
-        elif user_choice2_1 == 4:
-            print(user.Change_date_of_birth())
-
-    if user_choice2 == 4 :
-        print(user1.Remove_User())
-
-
-    if user_choice2 == 5:
-        print(user1.search_user_ByUsername())
-
-    
-
-
-
-elif user_choice == 3 :
-    loan = Loans("","")
-    user_choice3 = int(input("what you want to do \n 1 : Borrowed a Book \n 2 : Return a book \n 3 : Total Borrow book \n 4 : Check Overdue books"))
-
-    if user_choice3 == 1 :
-        loan.Borrow_book()
-
-    elif user_choice3 == 2 :
-        loan.Return_book()
-
-    elif user_choice3 == 3 :
-        loan.Total_Borrow_book()
-
-    elif user_choice3 == 4 :
-        loan.Over_due_books()
 
 
 
    
-    # loan.Borrow_book()
-    # loan.Return_book()
-    # loan.Total_Borrow_book()
-    # loan.Over_due_books()
-
-
-# print(book.Availaible_copies())
-# print(book.Copies_After_Buy())
